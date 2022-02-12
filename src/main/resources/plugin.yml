@@ -1,6 +1,10 @@
-name: Sports Viewer
+name: SportsViewer
 version: '${version}'
 main: me.michaelkellam.sportsviewer.SportsViewer
 api-version: 1.18
 authors: [ michaelkellamcs ]
 description: Minecraft plugin that lets you get details on sports teams
+commands:
+  nba:
+    description: Doubles the number given
+    usage: /<command>
