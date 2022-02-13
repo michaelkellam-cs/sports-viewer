@@ -46,9 +46,10 @@ public final class SportsViewer extends JavaPlugin implements CommandExecutor {
                 NBAMatchup matchup = nbaParser.getMatchupByTeamOnCurrentDay(team);
                 int status = matchup.getStatus();
                 String message = matchup.statusUpdate();
-                message = assignColors(message);
+//                message = assignColors(message);
                 String[] split = message.split(" ");
-                sender.sendMessage(message);
+                String test = ChatColor.YELLOW + assignColors(message);
+                sender.sendMessage(test);
                 return true;
             } catch (Exception e) {
                 System.out.println("Invalid command");

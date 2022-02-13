@@ -39,7 +39,7 @@ public class NBAMatchup {
 
     public String statusUpdate() {
         if (!isGameActive && !isGameOver) {
-            return "The game between the " + mainTeam.getTeamSummary() + " and the " + otherTeam.getTeamSummary() + " will start " + gameDateTime[0] + " at " + gameDateTime[1];
+            return "$YELLOWThe game between the $GOLD" + mainTeam.getTeamSummary() + " $YELLOWand the $GOLD" + otherTeam.getTeamSummary() + " $YELLOWwill start $GOLD" + gameDateTime[0] + " $YELLOWat $GOLD" + gameDateTime[1];
         }
 
         if (isGameActive) {
@@ -61,7 +61,7 @@ public class NBAMatchup {
                 }
             }
 
-            return "$YELLOWThe $GOLD" + mainTeam.getTeamSummary() + " " + status + " " + "the $GOLD" + otherTeam.getTeamSummary() + " $ORANGE" +
+            return "$YELLOWThe $GOLD" + mainTeam.getTeamSummary() + " " + status + " " + "the $GOLD" + otherTeam.getTeamSummary() + " $LIGHT_PURPLE" +
                     mainTeam.getScore() + "-" + otherTeam.getScore() +
                     " $YELLOWwith $GOLD" + timeLeft + " $YELLOWto go in $LIGHT_PURPLEQ" + quarter;
         }
@@ -72,14 +72,14 @@ public class NBAMatchup {
 
             switch (isWinning) {
                 case 0: {
-                    status = "LOST to";
+                    status = "$REDLOST $YELLOWto";
                     break;
                 }
                 case 1: {
-                    status = "DEFEATED";
+                    status = "$GREENDEFEATED $YELLOW";
                 }
             }
-            return "The " + mainTeam.getTeamSummary() + " " + status + " " + "the " + otherTeam.getTeamSummary() + " " + mainTeam.getScore() + "-" + otherTeam.getScore();
+            return "$YELLOWThe $GOLD" + mainTeam.getTeamSummary() + " " + status + " " + "the $GOLD" + otherTeam.getTeamSummary() + " $LIGHT_PURPLE" + mainTeam.getScore() + "-" + otherTeam.getScore();
         }
 
         return "idk";
