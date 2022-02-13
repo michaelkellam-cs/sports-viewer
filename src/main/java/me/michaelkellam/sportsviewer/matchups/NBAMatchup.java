@@ -48,22 +48,22 @@ public class NBAMatchup {
 
             switch (isWinning) {
                 case -1: {
-                    status = "are TIED with";
+                    status = "are $YELLOWTIED with";
                     break;
                 }
                 case 0: {
-                    status = "are LOSING" + " to";
+                    status = "are $REDLOSING" + " $YELLOWto";
                     break;
                 }
                 case 1: {
-                    status = "are BEATING the";
+                    status = "are $GREENBEATING $YELLOW";
                     break;
                 }
             }
 
-            return "The " + mainTeam.getTeamSummary() + " " + status + " " + "the " + otherTeam.getTeamSummary() + " " +
+            return "$YELLOWThe $GOLD" + mainTeam.getTeamSummary() + " " + status + " " + "the $GOLD" + otherTeam.getTeamSummary() + " $ORANGE" +
                     mainTeam.getScore() + "-" + otherTeam.getScore() +
-                    " with " + timeLeft + " to go in Q" + quarter;
+                    " $YELLOWwith $GOLD" + timeLeft + " $YELLOWto go in $LIGHT_PURPLEQ" + quarter;
         }
 
         if (isGameOver) {

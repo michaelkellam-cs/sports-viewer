@@ -25,7 +25,7 @@ public class NBAFetcherTest {
 //        String str = nbaFetcher.fetchData();
         TeamsConfig config = new TeamsConfig();
 
-        nbaMatchup = nbaParser.getMatchupByTeamOnCurrentDay("ATL");
+        nbaMatchup = nbaParser.getMatchupByTeamOnCurrentDay("NYK");
         String str = nbaMatchup.statusUpdate();
         System.out.println("TEST");
         System.out.println(str);

@@ -15,6 +15,7 @@ public final class SportsViewer extends JavaPlugin implements CommandExecutor {
 
     private NBAParser nbaParser;
     private TeamsConfig teamsConfig;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -45,6 +46,7 @@ public final class SportsViewer extends JavaPlugin implements CommandExecutor {
                 NBAMatchup matchup = nbaParser.getMatchupByTeamOnCurrentDay(team);
                 int status = matchup.getStatus();
                 String message = matchup.statusUpdate();
+                message = assignColors(message);
                 String[] split = message.split(" ");
                 sender.sendMessage(message);
                 return true;
@@ -54,6 +56,17 @@ public final class SportsViewer extends JavaPlugin implements CommandExecutor {
         }
 
         return false;
+    }
+
+    private String assignColors(String message) {
+        message = message
+                .replace("$YELLOW", "" + ChatColor.YELLOW)
+                .replace("$GOLD", "" + ChatColor.GOLD)
+                .replace("$GREEN", "" + ChatColor.GREEN)
+                .replace("$RED", "" + ChatColor.RED)
+                .replace("$LIGHT_PURPLE", "" + ChatColor.LIGHT_PURPLE);
+
+        return message;
     }
 //
 //    private String coloredText(String[] text, int status) {
